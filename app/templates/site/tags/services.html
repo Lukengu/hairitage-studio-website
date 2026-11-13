@@ -1,0 +1,41 @@
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-2">
+      <div class="col-md-8 heading-section text-center ftco-animate">
+        <span class="hs-section-label">What We Offer</span>
+        <h2 class="mb-3">Our Services</h2>
+        <p style="color:var(--hs-gray);font-size:0.92rem;max-width:520px;margin:0 auto;">
+          From classic cuts to bold transformations — every service delivered with precision and care.
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      {% for service in services %}
+      <div class="col-md-4 col-sm-6 mb-4 ftco-animate">
+        <div class="hs-service-card">
+          <div class="hs-service-icon">
+            {% if forloop.counter == 1 %}<i class="fa-solid fa-scissors"></i>
+            {% elif forloop.counter == 2 %}<i class="fa-solid fa-palette"></i>
+            {% elif forloop.counter == 3 %}<i class="fa-solid fa-spa"></i>
+            {% elif forloop.counter == 4 %}<i class="fa-solid fa-crown"></i>
+            {% elif forloop.counter == 5 %}<i class="fa-solid fa-wand-magic-sparkles"></i>
+            {% elif forloop.counter == 6 %}<i class="fa-solid fa-star"></i>
+            {% else %}<i class="fa-solid fa-gem"></i>
+            {% endif %}
+          </div>
+          <h3>{{ service.name }}</h3>
+          <p>{{ service.description }}</p>
+          <a href="/book.html" class="hs-service-book">Book Service</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row mt-3">
+      <div class="col text-center">
+        <a href="/pricing.html" class="btn-hs-primary" style="font-size:0.78rem;">
+          <i class="fa-solid fa-tags"></i> View Price List
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
